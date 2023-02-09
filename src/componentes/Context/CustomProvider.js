@@ -8,19 +8,24 @@ const CustomProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [cantidad, setCantidad] = useState(0);
 
-  const agregarProducto = () => {
-
-    const testProducto = {
-      id: 1,
-      nombre: "producto1",
-      precio: 10000,
-      cantidad: 5,
-    };
-
-    setCarrito([testProducto]);
-    setTotal(testProducto.precio * testProducto.cantidad);
-    setCantidad(testProducto.cantidad);
+  const agregarProducto = (producto, cantidad) => {
+    producto.cantidad = cantidad
+    setCarrito([producto]);
+    setTotal(producto.precio * cantidad);
+    setCantidad(cantidad);
   };
+
+  const eliminarProducto = () => {
+
+  }
+
+  const vaciarCarrito = () => {
+
+  }
+  
+  const estaEnCarrito = () => {
+    //retorna true o false si esta en el carrito
+  }
 
   const valorDelContexto = {
     carrito,
